@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafxapplication5.custom.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="648.0" prefWidth="828.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication5.FXMLDocumentController">
+    <children>
+      <TextField layoutX="185.0" layoutY="190.0" prefHeight="25.0" prefWidth="167.0" promptText="Nome do produto" />
+      <Label layoutX="63.0" layoutY="365.0" text="Data de fabricação:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnPesquisar" layoutX="676.0" layoutY="481.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="103.0" text="Pesquisar" />
+      <Button fx:id="btnLimpar" layoutX="676.0" layoutY="445.0" mnemonicParsing="false" onAction="#execTerminada" prefHeight="25.0" prefWidth="103.0" text="Limpar" />
+      <Button fx:id="btnAdicionar" layoutX="676.0" layoutY="580.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="35.0" prefWidth="103.0" text="Adcionar" />
+      <ChoiceBox fx:id="categoria" layoutX="185.0" layoutY="399.0" prefHeight="25.0" prefWidth="167.0" />
+      <Label layoutX="63.0" layoutY="401.0" prefHeight="20.0" prefWidth="74.0" text="Categoria:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="63.0" layoutY="447.0" text="Descrição:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextArea layoutX="184.0" layoutY="447.0" prefHeight="169.0" prefWidth="452.0" text="Para adicionar mais informações, use esse campo" />
+      <Label layoutX="374.0" layoutY="365.0" text="Data validade:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="374.0" layoutY="322.0" text="Valor:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="370.0" layoutY="189.0" text="Data de entrada:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="62.0" layoutY="279.0" text="Código de Barras:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="63.0" layoutY="322.0" text="Quantidade:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="62.0" layoutY="236.0" text="Fornecedor:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField layoutX="185.0" layoutY="276.0" prefHeight="25.0" prefWidth="452.0" promptText="000000000000" />
+      <TextField layoutX="185.0" layoutY="362.0" prefHeight="25.0" prefWidth="167.0" promptText="Insira a data " />
+      <NumberTextField fx:id="quantidade"  layoutX="185.0" layoutY="319.0" prefHeight="25.0" prefWidth="167.0" promptText="Quantidade" text=""/>
+      <TextField layoutX="478.0" layoutY="319.0" prefHeight="25.0" prefWidth="159.0" promptText="R$" />
+      <TextField layoutX="479.0" layoutY="186.0" prefHeight="25.0" prefWidth="159.0" promptText="Insira a data " />
+      <TextField layoutX="478.0" layoutY="362.0" prefHeight="25.0" prefWidth="159.0" promptText="Insira a data " />
+      <TextField layoutX="185.0" layoutY="233.0" prefHeight="25.0" prefWidth="452.0" promptText="Nome do fornecedor" />
+      <Separator layoutY="133.0" prefHeight="4.0" prefWidth="890.0" />
+      <Label layoutX="23.0" layoutY="72.0" text="Entrada de produtos">
+         <font>
+            <Font size="42.0" />
+         </font>
+      </Label>
+      <Label layoutX="62.0" layoutY="193.0" text="Nome do produto:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <MenuBar prefHeight="25.0" prefWidth="890.0">
+         <menus>
+            <Menu mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Close" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Edit">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Delete" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="About" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+    </children>
+</AnchorPane>
