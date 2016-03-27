@@ -12,8 +12,15 @@ import java.sql.ResultSet;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import static java.util.EnumSet.range;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -21,6 +28,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -38,13 +46,16 @@ public class FXMLDocumentController implements Initializable {
     public TextField dataEnt;
     public TextField fornecedor;
     public TextField codBar;
+    public Label lblCurrentUser;
+    public Label lblDate;
     @FXML
+    ComboBox<String> categoria;
     public NumberTextField quantidade;
     public TextField dataFab;
     public TextField dataVal;
     public TextField valor;
     
-    public ChoiceBox categoria;
+    
     
     @FXML
     public TextArea desc;
@@ -58,10 +69,12 @@ public class FXMLDocumentController implements Initializable {
     public int  qntd;
     public float preço;
     
-   
+    
         
     @FXML
     private void handleButtonAction(ActionEvent event) throws SQLException {
+        
+        
         
         
                 
@@ -114,7 +127,30 @@ public class FXMLDocumentController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        
+        String sla = System.getProperty("user.name");
+        String txtLabel = "Ola " + sla + ", seja bem-vindo!";
+        lblCurrentUser.setText(txtLabel);
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        Date date = new Date();
+        lblDate.setText(dateFormat.format(date)); //2014/08/06 15:59:48
+  
+        System.out.println("Olá");
+        try {
+        buildData();
+        } catch (SQLException e) {
+            
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Um erro ocorreu");
+            alert.setHeaderText("Não foi possivel conectar-se ao banco de dados");
+            alert.setContentText(e.toString());
+            alert.showAndWait();
+            
+        }
+        
+        /*    while (PoG = true) { 
+        
+      } */
     }    
     
     public void execTerminada() {
@@ -128,5 +164,23 @@ public class FXMLDocumentController implements Initializable {
        
     
     }
+    
+    public void buildData() throws SQLException{        
+    ObservableList<String>  data = FXCollections.observableArrayList(); //List of String
+
+    ConexaoMySql con = new ConexaoMySql();
+    try{      
+        String SQL = "Select nome from usuarios";            
+        ResultSet rs = con.conexao.createStatement().executeQuery(SQL);  
+        while(rs.next()){
+            data.add(rs.getString("nome")); //add the String to the list                                     
+        }
+        categoria.setItems(data); //Set the list of String as the data for your combo box
+    }
+    catch(Exception e){
+          e.printStackTrace();
+          System.out.println("Error on Building Data");            
+    }
+}
     
 }
