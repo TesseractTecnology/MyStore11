@@ -27,6 +27,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -142,6 +143,8 @@ public class FXMLDocumentController implements Initializable {
         
             Alert alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("Bem vindo :)");
+           
+            System.out.println(alert.getButtonTypes());
             alert.setHeaderText("Olá " + sla + ", como vai?");
             alert.setContentText("Hoje é: " + dateFormat.format(date));
             alert.showAndWait();
@@ -178,10 +181,10 @@ public class FXMLDocumentController implements Initializable {
 
     ConexaoMySql con = new ConexaoMySql();
     try{      
-        String SQL = "Select nome from usuarios";            
+        String SQL = "Select categoria from categorias";            
         ResultSet rs = con.conexao.createStatement().executeQuery(SQL);  
         while(rs.next()){
-            data.add(rs.getString("nome")); //add the String to the list                                     
+            data.add(rs.getString("categoria")); //add the String to the list                                     
         }
         categoria.setItems(data); //Set the list of String as the data for your combo box
     }
