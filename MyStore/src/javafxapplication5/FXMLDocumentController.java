@@ -131,13 +131,21 @@ public class FXMLDocumentController implements Initializable {
         String sla = System.getProperty("user.name");
         String txtLabel = "Ola " + sla + ", seja bem-vindo!";
         lblCurrentUser.setText(txtLabel);
-        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         Date date = new Date();
         lblDate.setText(dateFormat.format(date)); //2014/08/06 15:59:48
   
         System.out.println("Olá");
         try {
         buildData();
+        
+        
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Bem vindo :)");
+            alert.setHeaderText("Olá " + sla + ", como vai?");
+            alert.setContentText("Hoje é: " + dateFormat.format(date));
+            alert.showAndWait();
+        
         } catch (SQLException e) {
             
             Alert alert = new Alert(AlertType.INFORMATION);
