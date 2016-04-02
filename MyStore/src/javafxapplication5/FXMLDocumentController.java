@@ -26,6 +26,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -79,15 +80,14 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void handleButtonAction(ActionEvent event) throws SQLException, IOException {
         
+        Parent home_page_parent1 =  FXMLLoader.load(getClass().getResource("PesquisaProdutos.fxml"));
+        Scene home_page_scene1 = new Scene(home_page_parent1);
+        Stage app_stage1 = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        app_stage1.hide(); //optional
+        app_stage1.setScene(home_page_scene1);
+        app_stage1.show();  
         
-        Stage stage2 = new Stage();
-        
-        Parent root1 = FXMLLoader.load(getClass().getResource("AdminCenter.fxml"));
-        
-        Scene scene = new Scene(root1);
-        
-        stage2.setScene(scene);
-        stage2.show();
+      
         
                 
         /*   ConexaoMySql con = new ConexaoMySql();
@@ -151,13 +151,13 @@ public class FXMLDocumentController implements Initializable {
         try {
         buildData();
         
-        
+        /*
             Alert alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("Bem vindo :)");
             System.out.println(alert.getButtonTypes());
             alert.setHeaderText("Olá " + sla + ", como vai?");
             alert.setContentText("Hoje é: " + dateFormat.format(date));
-            alert.showAndWait();
+            alert.showAndWait();*/
         
         } catch (SQLException e) {
             
