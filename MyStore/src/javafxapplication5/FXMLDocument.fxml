@@ -62,11 +62,8 @@
          </font>
       </Label>
       <TextField layoutX="185.0" layoutY="276.0" prefHeight="25.0" prefWidth="452.0" promptText="000000000000" />
-      <TextField layoutX="185.0" layoutY="362.0" prefHeight="25.0" prefWidth="167.0" promptText="Insira a data " />
       <NumberTextField fx:id="quantidade" layoutX="185.0" layoutY="319.0" prefHeight="25.0" prefWidth="167.0" promptText="Quantidade" text="" />
       <TextField layoutX="478.0" layoutY="319.0" prefHeight="25.0" prefWidth="159.0" promptText="R$" />
-      <TextField layoutX="479.0" layoutY="186.0" prefHeight="25.0" prefWidth="159.0" promptText="Insira a data " />
-      <TextField layoutX="478.0" layoutY="362.0" prefHeight="25.0" prefWidth="159.0" promptText="Insira a data " />
       <TextField layoutX="185.0" layoutY="233.0" prefHeight="25.0" prefWidth="452.0" promptText="Nome do fornecedor" />
       <Separator layoutY="133.0" prefHeight="4.0" prefWidth="890.0" />
       <Label layoutX="23.0" layoutY="72.0" text="Entrada de produtos">
@@ -109,5 +106,8 @@
             <Font size="20.0" />
          </font>
       </Label>
+      <DatePicker layoutX="478.0" layoutY="187.0" prefHeight="25.0" prefWidth="159.0" />
+      <DatePicker layoutX="478.0" layoutY="363.0" prefHeight="25.0" prefWidth="159.0" />
+      <DatePicker layoutX="182.0" layoutY="363.0" prefHeight="25.0" prefWidth="167.0" />
     </children>
 </AnchorPane>

@@ -5,6 +5,7 @@
  */
 package javafxapplication5;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -23,7 +24,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
@@ -32,6 +36,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import javafxapplication5.custom.NumberTextField;
 
 /**
@@ -72,10 +77,17 @@ public class FXMLDocumentController implements Initializable {
     
         
     @FXML
-    private void handleButtonAction(ActionEvent event) throws SQLException {
+    private void handleButtonAction(ActionEvent event) throws SQLException, IOException {
         
         
+        Stage stage2 = new Stage();
         
+        Parent root1 = FXMLLoader.load(getClass().getResource("AdminCenter.fxml"));
+        
+        Scene scene = new Scene(root1);
+        
+        stage2.setScene(scene);
+        stage2.show();
         
                 
         /*   ConexaoMySql con = new ConexaoMySql();

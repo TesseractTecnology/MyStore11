@@ -7,15 +7,21 @@ package javafxapplication5;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 
 /**
  * FXML Controller class
  *
  * @author welli
  */
-public class AdminCenterController implements Initializable {
+public class PesquisaProdutosController implements Initializable {
 
+    
+    @FXML
+    public Button btn;
+    
     /**
      * Initializes the controller class.
      */
@@ -23,5 +29,11 @@ public class AdminCenterController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+    
+    public void execAlguma() {
+    
+        System.out.println("PRessionado");
+    
+    }
     
 }
