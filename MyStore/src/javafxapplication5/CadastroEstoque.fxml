@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafxapplication5.custom.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="648.0" prefWidth="828.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication5.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="648.0" prefWidth="828.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication5.CadastroEstoque">
     <children>
       <TextField layoutX="185.0" layoutY="190.0" prefHeight="25.0" prefWidth="167.0" promptText="Nome do produto" />
       <Label layoutX="63.0" layoutY="365.0" text="Data de fabricação:">

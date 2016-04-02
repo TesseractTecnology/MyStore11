@@ -44,7 +44,7 @@ import javafxapplication5.custom.NumberTextField;
  *
  * @author welli
  */
-public class FXMLDocumentController implements Initializable {
+public class CadastroEstoque implements Initializable {
     
        
     @FXML
@@ -80,6 +80,12 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void handleButtonAction(ActionEvent event) throws SQLException, IOException {
         
+        //Teste 
+        System.out.println("-----------------------------------------------------------------------------");
+        System.out.println(LoginController.loginGlobal);
+        System.out.println(LoginController.senhaGlobal);
+        
+        
         Parent home_page_parent1 =  FXMLLoader.load(getClass().getResource("PesquisaProdutos.fxml"));
         Scene home_page_scene1 = new Scene(home_page_parent1);
         Stage app_stage1 = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -88,7 +94,7 @@ public class FXMLDocumentController implements Initializable {
         app_stage1.show();  
         
       
-        
+        //até aqui
                 
         /*   ConexaoMySql con = new ConexaoMySql();
         np = nomeProduto.getText();
@@ -139,6 +145,8 @@ public class FXMLDocumentController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
+        
         
         String sla = System.getProperty("user.name");
         String txtLabel = "Ola " + sla + ", seja bem-vindo!";

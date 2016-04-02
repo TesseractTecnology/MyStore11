@@ -43,29 +43,34 @@ public class LoginController implements Initializable {
         // TODO
     }    
     
+
+    public static String loginGlobal; 
+    public static String senhaGlobal; 
+    
     @FXML
     private void handleButtonAction(ActionEvent event) throws IOException, SQLException {
+                
+        loginGlobal = loginTxt.getText();
+        senhaGlobal = senhaTxt.getText();
         
-        
+        System.out.println("DO IT");
+        Parent home_page_parent =  FXMLLoader.load(getClass().getResource("CadastroEstoque.fxml"));
+        Scene home_page_scene = new Scene(home_page_parent);
+        Stage app_stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
             
-       
-            System.out.println("DO IT");
-            Parent home_page_parent =  FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
-            Scene home_page_scene = new Scene(home_page_parent);
-            Stage app_stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-            
-            if (isValidCredentials())
-            {
-                app_stage.hide(); //optional
-                app_stage.setScene(home_page_scene);
-                app_stage.show();  
-            }
-            else
-            {
-                loginTxt.clear();
-                senhaTxt.clear();
-                invalid_label.setText("Sorry, invalid credentials"); 
-            }
+        if (isValidCredentials())
+        {
+            app_stage.hide(); //optional
+            app_stage.setScene(home_page_scene);
+            app_stage.show();  
+        }
+        else
+        {
+                
+            loginTxt.clear();
+            senhaTxt.clear();
+            invalid_label.setText("Sorry, invalid credentials"); 
+        }
     }    
     
        private boolean isValidCredentials() throws SQLException
@@ -105,5 +110,6 @@ public class LoginController implements Initializable {
             return let_in;
         
     }
+
     
 }
