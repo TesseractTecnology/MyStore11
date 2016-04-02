@@ -32,7 +32,7 @@ public class PesquisaProdutosController implements Initializable {
     
     public void execAlguma() {
     
-        System.out.println("PRessionado");
+        System.out.println("PRessiaonado");
     
     }
     
