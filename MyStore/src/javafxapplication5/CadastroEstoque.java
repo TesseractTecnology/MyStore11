@@ -34,6 +34,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -49,7 +50,7 @@ public class CadastroEstoque implements Initializable {
        
     @FXML
     public TextField nomeProduto;
-    public TextField dataEnt;
+    public DatePicker dataEnt;
     public TextField fornecedor;
     public TextField codBar;
     public Label lblCurrentUser;
@@ -57,8 +58,8 @@ public class CadastroEstoque implements Initializable {
     @FXML
     ComboBox<String> categoria;
     public NumberTextField quantidade;
-    public TextField dataFab;
-    public TextField dataVal;
+    public DatePicker dataFab;
+    public DatePicker dataVal;
     public TextField valor;
     
     
@@ -141,6 +142,15 @@ public class CadastroEstoque implements Initializable {
         execTerminada(); */
                 
         
+    }
+    
+    public void limpar() {
+    
+        nomeProduto.clear();
+        fornecedor.clear();
+        codBar.clear();
+       // quantidade.clear();
+        valor.clear();
     }
     
     @Override

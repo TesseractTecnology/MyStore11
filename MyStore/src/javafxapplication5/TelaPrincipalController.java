@@ -15,6 +15,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.TitledPane;
 import javafx.scene.layout.Border;
@@ -37,7 +38,7 @@ public class TelaPrincipalController implements Initializable {
     public Pane pn;
     public ColorPicker colorPi;
     public TitledPane tp;
-    
+    public Button bntEstoque;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -53,5 +54,7 @@ public class TelaPrincipalController implements Initializable {
         stage_cadastro.setScene(cadastro_estoque);
         stage_cadastro.show();  
     }
+     
+    
     
 }
