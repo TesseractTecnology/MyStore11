@@ -180,7 +180,7 @@ public class CadastroEstoque implements Initializable {
         } catch (SQLException e) {
             
             Alert alert = new Alert(AlertType.INFORMATION);
-            alert.setTitle("Um erro ocorreu");
+            alert.setTitle("Um erro aocorreu");
             alert.setHeaderText("Não foi possivel conectar-se ao banco de dados");
             alert.setContentText(e.toString());
             alert.showAndWait();
