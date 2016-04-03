@@ -54,15 +54,15 @@ public class LoginController implements Initializable {
         senhaGlobal = senhaTxt.getText();
         
         System.out.println("DO IT");
-        Parent home_page_parent =  FXMLLoader.load(getClass().getResource("CadastroEstoque.fxml"));
-        Scene home_page_scene = new Scene(home_page_parent);
-        Stage app_stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        Parent home_page_parent1 =  FXMLLoader.load(getClass().getResource("TelaPrincipal.fxml"));
+        Scene home_page_scene1 = new Scene(home_page_parent1);
+        Stage app_stage1 = (Stage) ((Node)event.getSource()).getScene().getWindow();
             
         if (isValidCredentials())
         {
-            app_stage.hide(); //optional
-            app_stage.setScene(home_page_scene);
-            app_stage.show();  
+            app_stage1.hide(); //optional
+            app_stage1.setScene(home_page_scene1);
+            app_stage1.show();  
         }
         else
         {
