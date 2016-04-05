@@ -10,9 +10,9 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication5.TelaPrincipalController">
    <children>
-      <Button layoutX="27.0" layoutY="132.0" mnemonicParsing="false" style="-fx-background-color: transparent;">
+      <Button fx:id="btnUsuarios" layoutX="27.0" layoutY="132.0" mnemonicParsing="false" style="-fx-background-color: transparent;">
          <graphic>
-            <ImageView fitHeight="60.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgUsuarios" fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../imgs/Add-Male-User.png" />
                </image>
@@ -22,8 +22,8 @@
             <Tooltip text="Usuários" />
          </tooltip>
       </Button>
-      <Separator layoutX="-4.0" layoutY="112.0" prefHeight="3.0" prefWidth="608.0" />
-      <MenuBar prefHeight="25.0" prefWidth="600.0">
+      <Separator layoutX="-4.0" layoutY="112.0" onMouseReleased="#handleMouseRelease" prefHeight="3.0" prefWidth="608.0" />
+      <MenuBar onMouseReleased="#handleMouseRelease" prefHeight="25.0" prefWidth="600.0">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
@@ -42,19 +42,19 @@
           </Menu>
         </menus>
       </MenuBar>
-      <Label layoutX="33.0" layoutY="48.0" text="Central">
+      <Label layoutX="33.0" layoutY="48.0" onMouseReleased="#handleMouseRelease" text="Central">
          <font>
             <Font size="43.0" />
          </font>
       </Label>
-      <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="444.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="444.0" layoutY="-7.0" onMouseReleased="#handleMouseRelease" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../imgs/Shop-256.png" />
          </image>
       </ImageView>
-      <Button layoutX="103.0" layoutY="132.0" mnemonicParsing="false" style="-fx-background-color: transparent;">
+      <Button fx:id="btnCaixa" layoutX="103.0" layoutY="132.0" mnemonicParsing="false" onMouseReleased="#handleMouseRelease" style="-fx-background-color: transparent;">
          <graphic>
-            <ImageView fitHeight="60.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgCaixa" fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../imgs/1459706708_Cashier-2.png" />
                </image>
@@ -64,9 +64,9 @@
             <Tooltip text="Caixa" />
          </tooltip>
       </Button>
-      <Button fx:id="btnEstoque" layoutX="185.0" layoutY="132.0" mnemonicParsing="false" onAction="#handleButtonAction1" style="-fx-background-color: transparent;">
+      <Button fx:id="btnEstoque" layoutX="185.0" layoutY="132.0" mnemonicParsing="false" onAction="#handleButtonAction1" onMouseReleased="#handleMouseRelease" style="-fx-background-color: transparent;">
          <graphic>
-            <ImageView fitHeight="55.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgEstoque" fitHeight="67.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../imgs/1459706968_Package-Download.png" />
                </image>
