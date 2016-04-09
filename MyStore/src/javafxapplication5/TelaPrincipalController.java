@@ -46,24 +46,30 @@ public class TelaPrincipalController implements Initializable {
     public Button btnEstoque;
     public Button btnUsuarios;
     public Button btnCaixa;
-    public ImageView imgCaixa, imgEstoque, imgUsuarios;
-    private EventHandler<MouseEvent> oneClickHandler;
-    private final Image image = new Image("http://icons.iconarchive.com/icons/sicons/basic-round-social/256/ember-js-icon.png");
+ //   public ImageView imgCaixa, imgEstoque, imgUsuarios;
+  //  private EventHandler<MouseEvent> oneClickHandler;
+  //  private final Image image = new Image("http://icons.iconarchive.com/icons/sicons/basic-round-social/256/ember-js-icon.png");
   //  private final Image fodeu = new Image(".../imgs/1459706968_Package-Download.png");
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
     
-     public void handleButtonAction1(ActionEvent event) throws IOException, SQLException {
-
-        Parent cadastroEstoque =  FXMLLoader.load(getClass().getResource("CadastroEstoque.fxml"));
-        Scene cadastro_estoque = new Scene(cadastroEstoque);
-        Stage stage_cadastro = (Stage) ((Node)event.getSource()).getScene().getWindow();
+    public void chamaEstoque(ActionEvent event) throws IOException, SQLException {
+    
+         Parent cadastroEstoque1 =  FXMLLoader.load(getClass().getResource("CadastroEstoque.fxml"));
+        Scene cadastro_estoque1 = new Scene(cadastroEstoque1);
+        Stage stage_cadastro1 = (Stage) ((Node)event.getSource()).getScene().getWindow();
         
         //Westage_cadastro.hide(); //optional
-        stage_cadastro.setScene(cadastro_estoque);
-        stage_cadastro.show();  
+        stage_cadastro1.setScene(cadastro_estoque1);
+        stage_cadastro1.show();  
+        
+    }
+    
+     public void handleButtonAction1(ActionEvent event) throws IOException, SQLException {
+
+       
     }
      
    // btn.setOnMousePressed(new EventHandler<MouseEvent>() {
@@ -74,22 +80,8 @@ public class TelaPrincipalController implements Initializable {
         // on a node with onMousePressed="#handleMouseRelease
      
        
-        
-       imgUsuarios.setImage(image);
-       imgUsuarios.setFitWidth(100);
-       imgUsuarios.setPreserveRatio(true);
-       imgUsuarios.setSmooth(true);
-       imgUsuarios.setCache(true);
-       new Thread().sleep(500);
-        System.out.println("Olá");
-       normal();
-       // imgUsuarios.setImage(fodeu);
+   
     }
     
-    public void normal() {
-        
-        imgUsuarios.setImage(null);
-    
-    }
-    
+ 
 }
