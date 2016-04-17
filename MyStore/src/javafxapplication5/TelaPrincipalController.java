@@ -55,7 +55,7 @@ public class TelaPrincipalController implements Initializable {
         // TODO
     }    
     
-    public void chamaEstoque(ActionEvent event) throws IOException, SQLException {
+    public void chamaEstoqueForm(ActionEvent event) throws IOException, SQLException {
     
          Parent cadastroEstoque1 =  FXMLLoader.load(getClass().getResource("CadastroEstoque.fxml"));
         Scene cadastro_estoque1 = new Scene(cadastroEstoque1);
@@ -64,6 +64,18 @@ public class TelaPrincipalController implements Initializable {
         //Westage_cadastro.hide(); //optional
         stage_cadastro1.setScene(cadastro_estoque1);
         stage_cadastro1.show();  
+        
+    }
+    
+    public void chamaUsuarios(ActionEvent event) throws IOException, SQLException {
+    
+    /*     Parent formUser =  FXMLLoader.load(getClass().getResource("ADDUSER.fxml"));
+         Scene addUser = new Scene(formUser);
+         Stage formAddUSer = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        
+        //Westage_cadastro.hide(); //optional
+        formAddUSer.setScene(addUser);
+        formAddUSer.show();  */
         
     }
     

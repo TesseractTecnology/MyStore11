@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafxapplication5.custom.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="648.0" prefWidth="828.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication5.CadastroEstoque">
+<AnchorPane id="AnchorPane" prefHeight="653.0" prefWidth="685.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication5.CadastroEstoque">
     <children>
       <TextField layoutX="185.0" layoutY="190.0" prefHeight="25.0" prefWidth="167.0" promptText="Nome do produto" />
       <Label layoutX="63.0" layoutY="365.0" text="Data de fabricação:">
@@ -17,12 +17,33 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Button fx:id="btnPesquisar" layoutX="719.0" layoutY="482.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="103.0" text="Pesquisar" />
-      <Button fx:id="btnLimpar" layoutX="719.0" layoutY="436.0" mnemonicParsing="false" onAction="#limpar" prefHeight="25.0" prefWidth="103.0" text="Limpar" />
-      <Button fx:id="btnAdicionar" layoutX="719.0" layoutY="581.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="35.0" prefWidth="103.0" text="Adcionar">
+      <Button fx:id="btnPesquisar" layoutX="687.0" layoutY="495.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="103.0" text="Pesquisar">
+         <graphic>
+            <ImageView fitHeight="19.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imgs/1460857050_search.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button fx:id="btnLimpar" layoutX="687.0" layoutY="445.0" mnemonicParsing="false" onAction="#limpar" prefHeight="25.0" prefWidth="103.0" text="Limpar">
+         <graphic>
+            <ImageView fitHeight="17.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imgs/1460857010_sign-error.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button fx:id="btnAdicionar" layoutX="687.0" layoutY="581.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="35.0" prefWidth="103.0" text="Adcionar">
          <tooltip>
             <Tooltip text="Adcionar" />
-         </tooltip></Button>
+         </tooltip>
+         <graphic>
+            <ImageView fitHeight="27.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imgs/1460856878_sign-add.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
       <Label layoutX="63.0" layoutY="401.0" prefHeight="20.0" prefWidth="74.0" text="Categoria:">
          <font>
             <Font size="14.0" />
@@ -68,7 +89,7 @@
       <NumberTextField fx:id="quantidade" layoutX="185.0" layoutY="319.0" prefHeight="25.0" prefWidth="167.0" promptText="Quantidade" text="" />
       <TextField layoutX="478.0" layoutY="319.0" prefHeight="25.0" prefWidth="159.0" promptText="R$" />
       <TextField layoutX="185.0" layoutY="233.0" prefHeight="25.0" prefWidth="452.0" promptText="Nome do fornecedor" />
-      <Separator layoutY="133.0" prefHeight="4.0" prefWidth="890.0" />
+      <Separator layoutY="133.0" prefHeight="9.0" prefWidth="864.0" />
       <Label layoutX="23.0" layoutY="72.0" text="Entrada de produtos">
          <font>
             <Font size="42.0" />
@@ -79,7 +100,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <MenuBar prefHeight="25.0" prefWidth="890.0">
+      <MenuBar prefHeight="25.0" prefWidth="864.0">
          <menus>
             <Menu mnemonicParsing="false" text="File">
                <items>
@@ -98,13 +119,13 @@
             </Menu>
          </menus>
       </MenuBar>
-      <ComboBox fx:id="categoria" layoutX="185.0" layoutY="399.0" prefHeight="25.0" prefWidth="167.0" />
-      <Label fx:id="lblCurrentUser" layoutX="687.0" layoutY="175.0" prefHeight="95.0" prefWidth="167.0" text="Label" wrapText="true">
+      <ComboBox fx:id="categoria" layoutX="182.0" layoutY="399.0" prefHeight="25.0" prefWidth="167.0" />
+      <Label fx:id="lblCurrentUser" layoutX="687.0" layoutY="175.0" prefHeight="95.0" prefWidth="167.0" text="Labelasd" textAlignment="CENTER" wrapText="true">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label fx:id="lblDate" layoutX="687.0" layoutY="280.0" prefHeight="85.0" prefWidth="167.0" text="Label" wrapText="true">
+      <Label fx:id="lblDate" layoutX="679.0" layoutY="280.0" prefHeight="85.0" prefWidth="167.0" text="Label" textAlignment="CENTER" wrapText="true">
          <font>
             <Font size="20.0" />
          </font>
@@ -117,5 +138,14 @@
             <Image url="@../imgs/inventory-maintenance.png" />
          </image>
       </ImageView>
+      <Button layoutX="62.0" layoutY="579.0" mnemonicParsing="false">
+         <graphic>
+            <ImageView fitHeight="31.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imgs/1460856035_go-back.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
     </children>
 </AnchorPane>
