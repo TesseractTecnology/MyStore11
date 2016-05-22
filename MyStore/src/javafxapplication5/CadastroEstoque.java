@@ -52,7 +52,7 @@ public class CadastroEstoque implements Initializable {
     public TextField nomeProduto;
     public DatePicker dataEnt;
     public TextField fornecedor;
-    public TextField codBar;
+    public NumberTextField codBar;
     public Label lblCurrentUser;
     public Label lblDate;
     @FXML
@@ -71,6 +71,7 @@ public class CadastroEstoque implements Initializable {
     public Button btnAdicionar;
     public Button btnPesquisar;
     public Button btnLimpar;
+    public Button voltarMain;
     
     public String np, frn, cat, barcode;
     public int  qntd;
@@ -87,25 +88,17 @@ public class CadastroEstoque implements Initializable {
         System.out.println(LoginController.senhaGlobal);
         
         
-        Parent home_page_parent1 =  FXMLLoader.load(getClass().getResource("PesquisaProdutos.fxml"));
+     /*   Parent home_page_parent1 =  FXMLLoader.load(getClass().getResource("PesquisaProdutos.fxml"));
         Scene home_page_scene1 = new Scene(home_page_parent1);
         Stage app_stage1 = (Stage) ((Node)event.getSource()).getScene().getWindow();
         app_stage1.hide(); //optional
         app_stage1.setScene(home_page_scene1);
-        app_stage1.show();  
+        app_stage1.show();  */
         
       
         //até aqui
                 
-        /*   ConexaoMySql con = new ConexaoMySql();
-        np = nomeProduto.getText();
-        frn = fornecedor.getText();
-        cat = "Lacticinios";
-        barcode = codBar.getText();
-        Statement st = con.conexao.createStatement();
-        /* String sql = ("INSERT INTO usuarios (USUARIOS,NOME,SENHA) VALUES" +  "(" + "'" + var1 + "'," + "'" + var2 + "'," + "'" + var3 + "')");
-        st.execute(sql);
-        execTerminada(); */
+   
         /**
          * I annotated your custom NumberTextField with @FXML
          * and also give it an id in the fxml file, which needs to
@@ -114,6 +107,8 @@ public class CadastroEstoque implements Initializable {
          */
         // try to get the Text
         String text = quantidade.getText();
+        String txt = codBar.getText();
+        System.out.println(text + txt );
         // check if the input is not null or empty
         if(text != null && !text.trim().isEmpty()) {
             // try to get a Number
@@ -125,7 +120,7 @@ public class CadastroEstoque implements Initializable {
                 System.err.println("Something went wrong. " + text + " could not be converted as a number.");
             }
         }
-    /*   ConexaoMySql con = new ConexaoMySql();
+      ConexaoMySql con = new ConexaoMySql();
         
        
         
@@ -133,14 +128,31 @@ public class CadastroEstoque implements Initializable {
         frn = fornecedor.getText();
         cat = "Lacticinios";
         
-        barcode = codBar.getText();
+       
         
-        
+      /*  String var1 = "teste";
+        String var2 = "teste";
+        String var3 = "teste";
         Statement st = con.conexao.createStatement();
-       /* String sql = ("INSERT INTO usuarios (USUARIOS,NOME,SENHA) VALUES" +  "(" + "'" + var1 + "'," + "'" + var2 + "'," + "'" + var3 + "')");
+        String sql = ("INSERT INTO tbl_estoque VALUES" +  "(" + "'" + np + "'," 
+                + "'" + frn + "',"
+                + "'" + var2 + "',"
+                + "'" + var2 + "',"
+                + "'" + var3 + "')");
         st.execute(sql);
         execTerminada(); */
                 
+        
+    }
+    
+    public void voltarMain(ActionEvent event) throws IOException {
+        
+        Parent home_page_parent1 =  FXMLLoader.load(getClass().getResource("TelaPrincipal.fxml"));
+        Scene home_page_scene1 = new Scene(home_page_parent1);
+        Stage app_stage1 = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        app_stage1.hide(); //optional
+        app_stage1.setScene(home_page_scene1);
+        app_stage1.show();  
         
     }
     
@@ -159,7 +171,7 @@ public class CadastroEstoque implements Initializable {
         
         
         String sla = System.getProperty("user.name");
-        String txtLabel = "Ola " + sla + ", seja bem-vindo!";
+        String txtLabel = "Olá " + sla + ", seja bem-vindo!";
         lblCurrentUser.setText(txtLabel);
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         Date date = new Date();

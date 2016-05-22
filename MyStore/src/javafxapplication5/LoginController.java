@@ -62,7 +62,9 @@ public class LoginController implements Initializable {
         {
             app_stage1.hide(); //optional
             app_stage1.setScene(home_page_scene1);
-            app_stage1.show();  
+            app_stage1.centerOnScreen();
+            app_stage1.show(); 
+           
         }
         else
         {
