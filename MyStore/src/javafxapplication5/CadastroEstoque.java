@@ -88,12 +88,7 @@ public class CadastroEstoque implements Initializable {
         System.out.println(LoginController.senhaGlobal);
         
         
-     /*   Parent home_page_parent1 =  FXMLLoader.load(getClass().getResource("PesquisaProdutos.fxml"));
-        Scene home_page_scene1 = new Scene(home_page_parent1);
-        Stage app_stage1 = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        app_stage1.hide(); //optional
-        app_stage1.setScene(home_page_scene1);
-        app_stage1.show();  */
+    
         
       
         //até aqui
@@ -106,7 +101,7 @@ public class CadastroEstoque implements Initializable {
          * NumberTextField within your FX Controller.
          */
         // try to get the Text
-        String text = quantidade.getText();
+    /*    String text = quantidade.getText();
         String txt = codBar.getText();
         System.out.println(text + txt );
         // check if the input is not null or empty
@@ -163,6 +158,16 @@ public class CadastroEstoque implements Initializable {
         codBar.clear();
        // quantidade.clear();
         valor.clear();
+    }
+    
+    public void pesquisar(ActionEvent event) throws IOException{
+        Parent home_page_parent1 =  FXMLLoader.load(getClass().getResource("PesquisaProdutos.fxml"));
+        Scene home_page_scene1 = new Scene(home_page_parent1);
+        Stage app_stage1 = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        app_stage1.hide(); //optional
+        app_stage1.setScene(home_page_scene1);
+        app_stage1.show();  
+        
     }
     
     @Override

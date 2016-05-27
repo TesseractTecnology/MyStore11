@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="667.0" prefWidth="1233.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication5.PesquisaProdutosController">
+   <children>
+      <TableView fx:id="table" layoutX="12.0" layoutY="183.0" prefHeight="470.0" prefWidth="1210.0">
+        <columns>
+          <TableColumn fx:id="column1" prefWidth="125.0" text="Nome do Produto" />
+            <TableColumn fx:id="column2" prefWidth="125.0" text="Fornecedor" />
+            <TableColumn fx:id="column3" prefWidth="117.0" text="Código de Barras" />
+            <TableColumn fx:id="column4" prefWidth="94.0" text="Quantidade" />
+            <TableColumn fx:id="column5" prefWidth="89.0" text="Valor " />
+            <TableColumn fx:id="column6" prefWidth="122.0" text="Data de Fabricação" />
+            <TableColumn fx:id="column7" prefWidth="99.0" text="Data Validade" />
+            <TableColumn fx:id="column8" prefWidth="81.0" text="Data Entrada" />
+            <TableColumn fx:id="column9" prefWidth="124.0" text="Categoria" />
+            <TableColumn fx:id="column10" prefWidth="232.0" text="Descrição" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

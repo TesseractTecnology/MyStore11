@@ -117,5 +117,14 @@
             <Font size="44.0" />
          </font>
       </Label>
+      <Button fx:id="voltarMain" layoutX="88.0" layoutY="438.0" mnemonicParsing="false" onAction="#voltarMain" prefHeight="14.0" prefWidth="101.0">
+         <graphic>
+            <ImageView fitHeight="18.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imgs/1460856035_go-back.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
    </children>
 </AnchorPane>

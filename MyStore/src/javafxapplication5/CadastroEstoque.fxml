@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafxapplication5.custom.*?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="653.0" prefWidth="685.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication5.CadastroEstoque">
+<AnchorPane id="AnchorPane" prefHeight="653.0" prefWidth="685.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication5.CadastroEstoque">
     <children>
       <TextField layoutX="185.0" layoutY="190.0" prefHeight="25.0" prefWidth="167.0" promptText="Nome do produto" />
       <Label layoutX="56.0" layoutY="367.0" text="Data de fabricação:">
@@ -17,7 +25,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Button fx:id="btnPesquisar" layoutX="711.0" layoutY="496.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="103.0" text="Pesquisar">
+      <Button fx:id="btnPesquisar" layoutX="711.0" layoutY="496.0" mnemonicParsing="false" onAction="#pesquisar" prefHeight="25.0" prefWidth="103.0" text="Pesquisar">
          <graphic>
             <ImageView fitHeight="19.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -140,7 +148,7 @@
       <DatePicker fx:id="dataFab" layoutX="182.0" layoutY="363.0" prefHeight="25.0" prefWidth="167.0" />
       <ImageView fitHeight="121.0" fitWidth="119.0" layoutX="703.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../imgs/inventory-maintenance.png" />
+            <Image url="@../imgs/1464404540_fork1.png" />
          </image>
       </ImageView>
       <Button fx:id="voltarMain" layoutX="59.0" layoutY="567.0" mnemonicParsing="false" onAction="#voltarMain" prefHeight="35.0" prefWidth="103.0">

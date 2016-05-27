@@ -5,6 +5,7 @@
  */
 package javafxapplication5;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -15,12 +16,17 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -55,6 +61,17 @@ public class ADCUsuarioController implements Initializable {
        buildData();
         
     }    
+    
+    public void voltarMain(ActionEvent event) throws IOException {
+        
+        Parent home_page_parent1 =  FXMLLoader.load(getClass().getResource("TelaPrincipal.fxml"));
+        Scene home_page_scene1 = new Scene(home_page_parent1);
+        Stage app_stage1 = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        app_stage1.hide(); //optional
+        app_stage1.setScene(home_page_scene1);
+        app_stage1.show();  
+        
+    }
     
     public void adcionarUsuario(ActionEvent event) {
                
