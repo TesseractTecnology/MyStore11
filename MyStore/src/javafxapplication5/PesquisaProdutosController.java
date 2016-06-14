@@ -71,13 +71,13 @@ public class PesquisaProdutosController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        System.out.println("-----------------------------------------------------------------------------");
+     /*   System.out.println("-----------------------------------------------------------------------------");
         String sla = System.getProperty("user.name");
         String txtLabel = "Olá " + sla + ", seja bem-vindo!";
         lblCurrentUser.setText(txtLabel);
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         Date date = new Date();
-        lblDate.setText(dateFormat.format(date));
+        lblDate.setText(dateFormat.format(date));*/
         buildData();
         table.getSelectionModel().setCellSelectionEnabled(false);
     
@@ -154,10 +154,11 @@ public class PesquisaProdutosController implements Initializable {
     public void exclui() {
        
         ObservableList selectedCells = table.getSelectionModel().getSelectedCells();
-       
-         TablePosition tablePosition = (TablePosition) selectedCells.get(0);
+        
+        TablePosition tablePosition = (TablePosition) selectedCells.get(0);
         Object val = tablePosition.getTableColumn().getCellData(tablePosition.getRow());
-        System.out.println("Selected Value " + val);
+        System.out.println(column1.getCellData(tablePosition.getRow()));
+      //  System.out.println("Valor selecionado:" + val);
      
     }
 

@@ -14,12 +14,12 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafxapplication5.custom.*?>
 <?import javafx.scene.text.Font?>
+<?import javafxapplication5.custom.*?>
 
 <AnchorPane id="AnchorPane" prefHeight="653.0" prefWidth="685.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication5.CadastroEstoque">
     <children>
-      <TextField layoutX="185.0" layoutY="190.0" prefHeight="25.0" prefWidth="167.0" promptText="Nome do produto" />
+      <TextField fx:id="nomeProduto" layoutX="185.0" layoutY="190.0" prefHeight="25.0" prefWidth="167.0" promptText="Nome do produto" />
       <Label layoutX="56.0" layoutY="367.0" text="Data de fabricação:">
          <font>
             <Font size="14.0" />
@@ -62,7 +62,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <TextArea layoutX="185.0" layoutY="449.0" prefHeight="169.0" prefWidth="452.0" text="Para adicionar mais informações, use esse campo" />
+      <TextArea fx:id="desc" layoutX="185.0" layoutY="449.0" prefHeight="169.0" prefWidth="452.0" text="Para adicionar mais informações, use esse campo" />
       <Label layoutX="374.0" layoutY="365.0" text="Data validade:">
          <font>
             <Font size="14.0" />
@@ -95,8 +95,8 @@
       </Label>
       <NumberTextField fx:id="codBar" layoutX="185.0" layoutY="276.0" prefHeight="25.0" prefWidth="452.0" promptText="000000000000" />
       <NumberTextField fx:id="quantidade" layoutX="185.0" layoutY="319.0" prefHeight="25.0" prefWidth="167.0" promptText="Quantidade" text="" />
-      <TextField layoutX="478.0" layoutY="319.0" prefHeight="25.0" prefWidth="159.0" promptText="R$" />
-      <TextField layoutX="185.0" layoutY="233.0" prefHeight="25.0" prefWidth="452.0" promptText="Nome do fornecedor" />
+      <TextField fx:id="valor" layoutX="478.0" layoutY="319.0" prefHeight="25.0" prefWidth="159.0" promptText="R$" />
+      <TextField fx:id="fornecedor" layoutX="185.0" layoutY="233.0" prefHeight="25.0" prefWidth="452.0" promptText="Nome do fornecedor" />
       <Separator layoutY="133.0" prefHeight="9.0" prefWidth="864.0" />
       <Label layoutX="23.0" layoutY="72.0" text="Entrada de produtos">
          <font>

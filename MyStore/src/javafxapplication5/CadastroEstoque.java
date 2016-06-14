@@ -15,6 +15,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Date;
 import static java.util.EnumSet.range;
 import java.util.ResourceBundle;
@@ -82,61 +84,39 @@ public class CadastroEstoque implements Initializable {
     @FXML
     private void handleButtonAction(ActionEvent event) throws SQLException, IOException {
         
-        //Teste 
-        System.out.println("-----------------------------------------------------------------------------");
-        System.out.println(LoginController.loginGlobal);
-        System.out.println(LoginController.senhaGlobal);
-        
-        
-    
-        
-      
-        //até aqui
-                
+        LocalDate date1 = dataFab.getValue();
+        LocalDate date2 = dataVal.getValue();
+        LocalDate date3 = dataEnt.getValue();
    
-        /**
-         * I annotated your custom NumberTextField with @FXML
-         * and also give it an id in the fxml file, which needs to
-         * be the same "name" you have choosen as member name for this 
-         * NumberTextField within your FX Controller.
-         */
-        // try to get the Text
-    /*    String text = quantidade.getText();
-        String txt = codBar.getText();
-        System.out.println(text + txt );
-        // check if the input is not null or empty
-        if(text != null && !text.trim().isEmpty()) {
-            // try to get a Number
-            try {
-                int numberValue = Integer.parseInt(text);
-                // here goes your logic
-                System.out.println("You have entered following Number: " + numberValue);
-            } catch (NumberFormatException ex) {
-                System.err.println("Something went wrong. " + text + " could not be converted as a number.");
+        try{ 
+                ConexaoMySql con = new ConexaoMySql();
+                String sql = "INSERT INTO tbl_estoque (NOMEPRODUTO, FORNECEDOR, CODBAR, QUANTIDADE, VALOR, DATAFAB, DATAVAL, DATAENT, CATEGORIA, DESCRICAO) "
+                        + "values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                PreparedStatement statement = con.conexao.prepareStatement(sql);
+                statement.setString(1, nomeProduto.getText());
+                statement.setString(2, fornecedor.getText());
+                statement.setInt(3, Integer.parseInt(codBar.getText()));
+                statement.setInt(4, Integer.parseInt(quantidade.getText()));
+                statement.setFloat(5, Float.parseFloat(valor.getText()));
+                statement.setString(6, date1.toString());
+                statement.setString(7, date2.toString());
+                statement.setString(8, date3.toString());
+                statement.setString(9, categoria.getSelectionModel().getSelectedItem());
+                statement.setString(10, desc.getText());
+              
+                  int row = statement.executeUpdate();
+            if (row > 0) {
+                System.out.println("A contact was inserted with photo image.");
             }
-        }
-      ConexaoMySql con = new ConexaoMySql();
-        
-       
-        
-        np = nomeProduto.getText();
-        frn = fornecedor.getText();
-        cat = "Lacticinios";
-        
-       
-        
-      /*  String var1 = "teste";
-        String var2 = "teste";
-        String var3 = "teste";
-        Statement st = con.conexao.createStatement();
-        String sql = ("INSERT INTO tbl_estoque VALUES" +  "(" + "'" + np + "'," 
-                + "'" + frn + "',"
-                + "'" + var2 + "',"
-                + "'" + var2 + "',"
-                + "'" + var3 + "')");
-        st.execute(sql);
-        execTerminada(); */
+            
+              buildData();
                 
+                
+            } catch(Exception e) {
+                e.printStackTrace();
+                System.out.println("erro");
+            }
+            
         
     }
     
