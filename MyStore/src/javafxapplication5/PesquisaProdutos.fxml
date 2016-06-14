@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
@@ -10,11 +13,13 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="635.0" prefWidth="1233.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication5.PesquisaProdutosController">
    <children>
@@ -43,13 +48,13 @@
             <Image url="@../imgs/1464404626_self1.png" />
          </image>
       </ImageView>
-      <TabPane layoutY="144.0" prefHeight="585.0" prefWidth="1227.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane layoutY="145.0" prefHeight="488.0" prefWidth="1233.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Visualização">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="439.0" prefWidth="1233.0">
                      <children>
-                        <TableView fx:id="table" layoutX="238.0" layoutY="14.0" prefHeight="539.0" prefWidth="1094.0">
+                        <TableView fx:id="table" layoutX="239.0" layoutY="14.0" prefHeight="427.0" prefWidth="989.0">
                            <columns>
                               <TableColumn fx:id="column1" prefWidth="125.0" text="Nome do produto" />
                               <TableColumn fx:id="column2" prefWidth="125.0" text="Fornecedor" />
@@ -131,12 +136,150 @@
                   </AnchorPane>
             </content>
           </Tab>
-          <Tab text="Untitled Tab 2">
+          <Tab text="Inserir novo ">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <CheckBox layoutX="677.0" layoutY="215.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="168.0" text="Medida de volume">
+                           <font>
+                              <Font size="14.0" />
+                           </font></CheckBox>
+                        <TextField layoutX="392.0" layoutY="25.0" prefHeight="25.0" prefWidth="167.0" promptText="Nome do produto" />
+                        <Label layoutX="254.0" layoutY="181.0" text="Data de fabricação:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="310.0" layoutY="217.0" prefHeight="20.0" prefWidth="74.0" text="Categoria:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="308.0" layoutY="270.0" text="Descrição:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextArea layoutX="385.0" layoutY="267.0" prefHeight="169.0" prefWidth="452.0" text="Para adicionar mais informações, use esse campo" />
+                        <Label layoutX="584.0" layoutY="181.0" text="Data validade:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="628.0" layoutY="142.0" text="Valor:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="265.0" layoutY="103.0" text="Código de Barras:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="298.0" layoutY="142.0" text="Quantidade:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="302.0" layoutY="68.0" text="Fornecedor:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="677.0" layoutY="140.0" prefHeight="25.0" prefWidth="170.0" promptText="R$" />
+                        <TextField layoutX="392.0" layoutY="65.0" prefHeight="25.0" prefWidth="452.0" promptText="Nome do fornecedor" />
+                        <Label layoutX="260.0" layoutY="27.0" text="Nome do produto:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <ComboBox layoutX="392.0" layoutY="214.0" prefHeight="25.0" prefWidth="169.0" />
+                        <ImageView fitHeight="198.0" fitWidth="187.0" layoutX="22.0" layoutY="86.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../imgs/post-it-150261_640.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="lblDate" layoutX="71.0" layoutY="203.0" prefHeight="28.0" prefWidth="88.0" text="16/04/2016" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblCurrentUser" layoutX="44.0" layoutY="125.0" prefHeight="74.0" prefWidth="143.0" text="Labelasd" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <DatePicker layoutX="391.0" layoutY="178.0" prefHeight="25.0" prefWidth="169.0" />
+                        <DatePicker layoutX="677.0" layoutY="178.0" prefHeight="25.0" prefWidth="168.0" />
+                        <DatePicker layoutX="677.0" layoutY="25.0" prefHeight="25.0" prefWidth="167.0" />
+                        <Button layoutX="173.0" layoutY="9.0" mnemonicParsing="false" onAction="#voltarMain" prefHeight="42.0" prefWidth="49.0">
+                           <graphic>
+                              <ImageView fitHeight="33.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../imgs/1460856035_go-back.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button layoutX="119.0" layoutY="9.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="50.0">
+                           <graphic>
+                              <ImageView fitHeight="40.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../imgs/1465938252_flat_icons-graficheria.it-08.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button layoutX="66.0" layoutY="9.0" mnemonicParsing="false" onAction="#exclui" prefHeight="42.0" prefWidth="49.0">
+                           <graphic>
+                              <ImageView fitHeight="33.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../imgs/1460857010_sign-error.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button layoutX="12.0" layoutY="9.0" mnemonicParsing="false" onAction="#adcionar" prefHeight="42.0" prefWidth="47.0">
+                           <graphic>
+                              <ImageView fitHeight="34.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../imgs/1460856878_sign-add.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Separator layoutX="234.0" layoutY="-2.0" orientation="VERTICAL" prefHeight="465.0" prefWidth="6.0" />
+                        <Separator layoutX="910.0" layoutY="-3.0" orientation="VERTICAL" prefHeight="465.0" prefWidth="6.0" />
+                        <Button layoutX="562.0" layoutY="214.0" mnemonicParsing="false" onAction="#adcionar" prefHeight="26.0" prefWidth="17.0" style="-fx-background-color: transparent;">
+                           <graphic>
+                              <ImageView fitHeight="18.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../imgs/1460856878_sign-add.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button layoutX="844.0" layoutY="65.0" mnemonicParsing="false" onAction="#adcionar" prefHeight="12.0" prefWidth="34.0" style="-fx-background-color: transparent;">
+                           <graphic>
+                              <ImageView fitHeight="18.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../imgs/1460856878_sign-add.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <TextField layoutX="392.0" layoutY="103.0" prefHeight="25.0" prefWidth="452.0" promptText="Nome do fornecedor" />
+                        <TextField layoutX="392.0" layoutY="140.0" prefHeight="25.0" prefWidth="167.0" promptText="Nome do produto" />
+                        <Separator layoutX="-3.0" layoutY="67.0" prefHeight="3.0" prefWidth="239.0" />
+                     </children></AnchorPane>
             </content>
           </Tab>
         </tabs>
       </TabPane>
+      <Label layoutX="21.0" layoutY="74.0" text="Gerenciamento de estoque">
+         <font>
+            <Font size="44.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

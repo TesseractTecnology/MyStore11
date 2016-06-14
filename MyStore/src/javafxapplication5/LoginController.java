@@ -78,8 +78,8 @@ public class LoginController implements Initializable {
        private boolean isValidCredentials() throws SQLException
     {
         boolean let_in = false;
-        System.out.println( "SELECT * FROM Usuarios WHERE Usuarios= " + "'" + loginTxt.getText() + "'" 
-            + " AND Senha= " + "'" + senhaTxt.getText() + "'" );
+        System.out.println( "SELECT * FROM Usuarios WHERE id_usuarios " + "'" + loginTxt.getText() + "'" 
+            + " AND senhaUsuario = " + "'" + senhaTxt.getText() + "'" );
     
         ConexaoMySql con = new ConexaoMySql();
         Statement stmt = con.conexao.createStatement();
@@ -89,14 +89,14 @@ public class LoginController implements Initializable {
             System.out.println("Opened database successfully");
             
             
-            ResultSet rs = stmt.executeQuery( "SELECT * FROM usuarios WHERE USUARIOS= " + "'" + loginTxt.getText() + "'"  + " AND SENHA= " + "'" + senhaTxt.getText() + "'");
+            ResultSet rs = stmt.executeQuery( "SELECT * FROM usuarios WHERE id_usuario = " + "'" + loginTxt.getText() + "'"  + " AND senha_Usuario = " + "'" + senhaTxt.getText() + "'");
             
             
             while ( rs.next() ) {
-                 if (rs.getString("USUARIOS") != null && rs.getString("SENHA") != null) { 
-                     String  username = rs.getString("USUARIOS");
+                 if (rs.getString("id_usuario") != null && rs.getString("senha_Usuario") != null) { 
+                     String  username = rs.getString("id_usuario");
                      System.out.println( "USUARIOS = " + username );
-                     String password = rs.getString("SENHA");
+                     String password = rs.getString("senha_Usuario");
                      System.out.println("SENHA = " + password);
                      let_in = true;
                  }  
